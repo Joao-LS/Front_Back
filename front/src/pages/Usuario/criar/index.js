@@ -15,7 +15,9 @@ class CriarUsuario extends Component {
                 nomePedido: "",
                 custo: "",
                 preço: "",
-                estoque: "true",
+                estoque: "Disponível",
+                createdAt: "",
+                updatedAt: "",
             },
             erro: null,
             redirect: false
@@ -48,13 +50,11 @@ class CriarUsuario extends Component {
                             <br />
                             <input
                                 type="text"
-                                id="nome"
-                                name="nome"
-                                placeholder="Nome"
-                                minLength="3"
-                                maxLength="100"
+                                id="nomeCliente"
+                                name="nomeCliente"
+                                placeholder="nomeCliente"
                                 required
-                                value={this.state.usuario.nome}
+                                value={this.state.usuario.nomeCliente}
                                 onChange={this.handleInputChange}
                             />
                         </div>
@@ -139,11 +139,39 @@ class CriarUsuario extends Component {
                                 name="preço"
                                 placeholder="Preço"
                                 required
-                                value={this.state.usuario.Preço}
+                                value={this.state.usuario.preço}
                                 onChange={this.handleInputChange}
                             />
                         </div>                       
  
+                        <div className="usuario-insert">
+                            <label htmlFor="createdAt">Criado</label>
+                            <br />
+                            <input
+                                type="text"
+                                id="createdAt"
+                                name="createdAt"
+                                placeholder="yyyy/mm/dd"
+                                required
+                                value={this.state.usuario.createdAt}
+                                onChange={this.handleInputChange}
+                            />
+                        </div>
+
+                        <div className="usuario-insert">
+                            <label htmlFor="updatedAt">Atualizado</label>
+                            <br />
+                            <input
+                                type="text"
+                                id="updatedAt"
+                                name="updatedAt"
+                                placeholder="yyyy/mm/dd"
+                                required
+                                value={this.state.usuario.updatedAt}
+                                onChange={this.handleInputChange}
+                            />
+                        </div>
+
                         <div className="usuario-insert">
                             <label>
                                 <input
@@ -167,10 +195,7 @@ class CriarUsuario extends Component {
                         </label>
                         </div>
  
- 
-                        <button type="submit" className="btn btn-primary">
-                            Cadastrar
-                        </button>
+                        <button type="submit" className="btn btn-outline-primary">Cadastrar</button>
                     </fieldset>
                 </form>
             );

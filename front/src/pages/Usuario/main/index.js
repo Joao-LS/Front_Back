@@ -26,16 +26,16 @@ export default class Main extends Component {
  
         return (
             <div className="usuario-list">
-                <Link to={`/criarUsuario`}> <button type="button" class="btn btn-success">Novo</button> </Link>
+                <Link to={`/criarUsuario`}><button type="button" class="btn btn-outline-success">Novo</button></Link>
                 <br /><br />
  
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th scope="col">#</th>
+                            <th scope="col">ID</th>
                             <th scope="col">Pedido</th>
                             <th scope="col">Custo</th>
-                            <th scope="col">PreçoVenda</th>
+                            <th scope="col">Preço de Venda</th>
                             <th scope="col">Estoque</th>
                             <th scope="col">Ações</th>
                         </tr>
@@ -48,9 +48,10 @@ export default class Main extends Component {
                                 <td>{usuario.custo.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</td>
                                 <td>{usuario.preço.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</td>
                                 <td>{usuario.estoque ? "Disponível" : "Falta"}</td>
-                                <td> <Link to={`/usuarios/${usuario.id}`}> <button type="button" class="btn btn-primary">Detalhes</button> </Link> </td>
-                                <td> <Link to={`/editarUsuario/${usuario.id}`}> <button type="button" class="btn btn-warning">Atualizar</button> </Link></td>
-                                <td> <Link to={`/deletarUsuario/${usuario.id}`}> <button type="button" class="btn btn-danger">Excluir</button> </Link></td>
+
+                                <td> <Link to={`/usuarios/${usuario.id}`}> <button type="button" class="btn btn-outline-success">Detalhes</button></Link> </td>
+                                <td> <Link to={`/editarUsuario/${usuario.id}`}><button type="button" class="btn btn-outline-warning">Atualizar</button> </Link></td>
+                                <td> <Link to={`/deletarUsuario/${usuario.id}`}><button type="button" class="btn btn-outline-danger">Deletar</button></Link></td>
                             </tr>
                         ))}
                     </tbody>

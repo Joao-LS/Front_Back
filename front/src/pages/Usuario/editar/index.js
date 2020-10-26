@@ -8,9 +8,15 @@ class EditarUsuario extends Component {
  
         this.state = {
             usuario: {
-                nome: "",
-                salario: "",
-                dataNascimento: ""
+                nomeCliente: "",
+                endereço: "",
+                email: "",
+                telefone: "",
+                nomePedido: "",
+                custo: "",
+                preço: "",
+                estoque: "",
+
             },
             erro: null,
             redirect: false
@@ -60,13 +66,13 @@ class EditarUsuario extends Component {
                             <br />
                             <input
                                 type="text"
-                                id="nome"
-                                name="nome"
+                                id="nomeCliente"
+                                name="nomeCliente"
                                 placeholder="Nome"
                                 minLength="3"
                                 maxLength="100"
                                 required
-                                value={this.state.usuario.Cliente}
+                                value={this.state.usuario.nomeCliente}
                                 onChange={this.handleInputChange}
                             />
                         </div>
@@ -162,6 +168,8 @@ class EditarUsuario extends Component {
                                 onChange={this.handleInputChange}
                             />
                         </div>
+
+                        
 
                         <button type="submit" className="btn btn-primary">
                             Atualizar

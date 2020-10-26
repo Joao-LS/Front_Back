@@ -32,10 +32,11 @@ export default class Usuario extends Component {
                 <h1> {usuario.endereço} </h1>
                 <h1> {usuario.email} </h1>
                 <h1> {usuario.telefone} </h1>
-                <br />
-                <Link to={`/usuarios`}> Voltar </Link> <br />
-                <Link to={`/editarUsuario/${usuario.id}`}> Editar </Link> <br />
-                <Link to={`/deletarUsuario/${usuario.id}`}> Deletar </Link> <br />
+                <div id="oi4">
+                <Link to={`/usuarios`}> <button type="button" id="oi1"  class="btn btn-outline-success">Voltar</button> </Link>
+                <Link to={`/editarUsuario/${usuario.id}`}> <button type="button" id="oi2" class="btn btn-outline-warning">Editar</button></Link> 
+                <Link to={`/deletarUsuario/${usuario.id}`}> <button type="button" id="oi3" class="btn btn-outline-danger">Deletar</button></Link> 
+                </div>
             </div >
         );
     }
